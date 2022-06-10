@@ -18,11 +18,10 @@ public class DetalhesDoTopicoDto {
     private StatusTopico status;
     private List<RespostaDTO> respostas;
 
-
-    public DetalhesDoTopicoDto(Topico topico){
+    public DetalhesDoTopicoDto(Topico topico) {
         this.id = topico.getId();
         this.titulo = topico.getTitulo();
-        this.titulo = topico.getMensagem();
+        this.mensagem = topico.getMensagem();
         this.dataCriacao = topico.getDataCriacao();
         this.nomeAutor = topico.getAutor().getNome();
         this.status = topico.getStatus();

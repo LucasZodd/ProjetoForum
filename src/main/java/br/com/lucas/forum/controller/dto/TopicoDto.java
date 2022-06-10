@@ -1,6 +1,7 @@
 package br.com.lucas.forum.controller.dto;
 
 import br.com.lucas.forum.modelo.Topico;
+import org.springframework.data.domain.Page;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,15 +14,11 @@ public class TopicoDto {
     private String mensagem;
     private LocalDateTime dataCriacao;
 
-    public TopicoDto(Topico topico){
+    public TopicoDto(Topico topico) {
         this.id = topico.getId();
         this.titulo = topico.getTitulo();
-        this.titulo = topico.getMensagem();
+        this.mensagem = topico.getMensagem();
         this.dataCriacao = topico.getDataCriacao();
-    }
-
-    public static List<TopicoDto> converter(List<Topico> topicos) {
-        return topicos.stream().map(TopicoDto::new).collect(Collectors.toList());
     }
 
     public Long getId() {
@@ -40,5 +37,8 @@ public class TopicoDto {
         return dataCriacao;
     }
 
+    public static Page<TopicoDto> converter(Page<Topico> topicos) {
+        return topicos.map(TopicoDto::new);
+    }
 
 }

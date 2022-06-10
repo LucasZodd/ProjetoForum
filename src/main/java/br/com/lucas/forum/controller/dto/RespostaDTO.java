@@ -8,13 +8,13 @@ public class RespostaDTO {
 
     private Long id;
     private String mensagem;
-    private LocalDateTime dataCricacao;
+    private LocalDateTime dataCriacao;
     private String nomeAutor;
 
     public RespostaDTO(Resposta resposta) {
         this.id = resposta.getId();
         this.mensagem = resposta.getMensagem();
-        this.dataCricacao = resposta.getDataCriacao();
+        this.dataCriacao = resposta.getDataCriacao();
         this.nomeAutor = resposta.getAutor().getNome();
     }
 
@@ -26,8 +26,8 @@ public class RespostaDTO {
         return mensagem;
     }
 
-    public LocalDateTime getDataCricacao() {
-        return dataCricacao;
+    public LocalDateTime getDataCriacao() {
+        return dataCriacao;
     }
 
     public String getNomeAutor() {
